@@ -1,7 +1,7 @@
 const express = require("express")
-const Loan = require("../models/loan")
+const Loan = require("../../models/loan")
 const router = express.Router()
-const auth = require("../middleware/auth")
+const auth = require("../../middleware/auth")
 
 // Endpoint to create a new loan entry in the database.
 router.post('/create-loan', auth, async (req, res) => {
