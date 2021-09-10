@@ -6,6 +6,7 @@ import { auth, provider } from "../../helpers/firebase"
 import { getUserAccessToken, getUserInfo, setUserAccessToken, setUserInfo } from '../../helpers/localStorage';
 import { useHistory } from 'react-router';
 import jwt_decode from "jwt-decode";
+import { Button } from "reactstrap"
 
 const LoginScreen = () => {
 
@@ -64,10 +65,13 @@ const LoginScreen = () => {
         <div style={{height: "100vh", width: "100vw"}}>
             <div 
                 className="h-100 w-100 d-flex justify-content-center align-items-center" 
-                style={{cursor: 'pointer'}}
-                onClick={signInHandler}
             >
-                Continue with Google
+                <Button
+                    style={{cursor: 'pointer'}}
+                    onClick={signInHandler}
+                >
+                    Continue with Google
+                </Button>
             </div>
         </div>
     )

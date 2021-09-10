@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Col, Row } from 'reactstrap'
+import { Button, Card, Col, Row } from 'reactstrap'
 
 const LoanCard = (props) => {
 
@@ -13,7 +13,7 @@ const LoanCard = (props) => {
 
     return (
         <Col lg={4} className="my-2">
-            <Card style={{cursor: "pointer"}} onClick={cardClickHandler}>
+            <Card style={{border: "2px solid black", paddingLeft: "10px"}} >
                 <Row>
                     <span>
                         <strong>Applicant: </strong>
@@ -42,6 +42,12 @@ const LoanCard = (props) => {
                         /{date.getMonth() + 1}
                         /{date.getFullYear()}
                     </span>
+                </Row>
+
+                <Row className="d-flex align-items-center justify-content-center">
+                    <Button style={{cursor: "pointer", width: "100px"}} onClick={cardClickHandler}>
+                        See More
+                    </Button>
                 </Row>
             </Card>
         </Col>

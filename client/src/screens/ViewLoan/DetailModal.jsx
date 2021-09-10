@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Row } from 'reactstrap'
+import { Modal, ModalBody, ModalHeader, Row } from 'reactstrap'
 
 const DetailModal = (props) => {
 
@@ -9,49 +9,55 @@ const DetailModal = (props) => {
     return (
         <div className="">
             <Modal isOpen={isOpen} toggle={toggle} className="p-5" >
-                <Row>
-                    <span>
-                        <strong>Applicant: </strong>
-                        {info.name}
-                    </span>
-                </Row>
+                <ModalHeader>
+                    Complete Details
+                </ModalHeader>
 
-                <Row>
-                    <span>
-                        <strong>Amount: </strong>
-                        Rs {info.amount}
-                    </span>
-                </Row>
+                <ModalBody>
+                    <Row>
+                        <span>
+                            <strong>Applicant: </strong>
+                            {info.name}
+                        </span>
+                    </Row>
 
-                <Row>
-                    <span>
-                        <strong>EMI: </strong>
-                        Rs {info?.emi}
-                    </span>
-                </Row>
+                    <Row>
+                        <span>
+                            <strong>Amount: </strong>
+                            Rs {info.amount}
+                        </span>
+                    </Row>
 
-                <Row>
-                    <span>
-                        <strong>Date Applied: </strong>
-                        {date.getDate()}
-                        /{date.getMonth() + 1}
-                        /{date.getFullYear()}
-                    </span>
-                </Row>
+                    <Row>
+                        <span>
+                            <strong>EMI: </strong>
+                            Rs {info?.emi}
+                        </span>
+                    </Row>
 
-                <Row>
-                    <span>
-                        <strong>Address: </strong>
-                        {info.address}
-                    </span>
-                </Row>
+                    <Row>
+                        <span>
+                            <strong>Date Applied: </strong>
+                            {date.getDate()}
+                            /{date.getMonth() + 1}
+                            /{date.getFullYear()}
+                        </span>
+                    </Row>
 
-                <Row>
-                    <span>
-                        <strong>Email: </strong>
-                        {info.email}
-                    </span>
-                </Row>
+                    <Row>
+                        <span>
+                            <strong>Address: </strong>
+                            {info.address}
+                        </span>
+                    </Row>
+
+                    <Row>
+                        <span>
+                            <strong>Email: </strong>
+                            {info.email}
+                        </span>
+                    </Row>
+                </ModalBody>
             </Modal>
         </div>
     )
