@@ -17,14 +17,14 @@ app.use(cors({
 app.use(express.json({limit: '50mb'}))
 app.use(express.urlencoded({ extended: false }))
 
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 // All the APIs would be accessible through the endpoint starting with "/api"
 app.use("/api", require("./routes/loan"))
 
 // This is added to send files for the production build.
 app.get('/*', (req, res) => {
-    return res.sendFile(path.join(__dirname, "..", 'client', 'build', 'index.html'));
+    return res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
 app.listen(port, () => {
